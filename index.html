@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown and Carousel</title>
+    <script src="scripts.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <div class="carousel">
+        <div class="slides">
+            <img src="./images/good-boy-one.jpeg">
+            <img src="./images/good-boy-two.png">
+            <img src="./images/good-boy-three.jpg">
+            <img src="./images/good-boy-four.jpg">
+            <img src="./images/good-boy-five.jpg">
+        </div>
+        <button class="prev">◀</button>
+        <button class="next">▶</button>
+    </div>
+
+    <div class="dots"></div>
+
+    <button class="dropdown-btn">Who's the best boy?:</button>
+
+    <ul class="dropdown-menu hidden">
+        <li data-index="0">Picture One <span class="votes"></span></li>
+        <li data-index="1">Picture Two <span class="votes"></span></li>
+        <li data-index="2">Picture Three <span class="votes"></span></li>
+        <li data-index="3">Picture Four <span class="votes"></span></li>
+        <li data-index="4">Picture Five <span class="votes"></span></li>
+    </ul>
+
+</body>
+</html>

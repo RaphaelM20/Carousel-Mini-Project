@@ -1,34 +1,40 @@
 let currentIndex = 0;
 const slides = document.querySelector(".slides");
 
+function goToNextSlide() {
+    currentIndex++;
+    if (currentIndex >= slides.children.length) {
+        currentIndex = 0;
+    }
+    showSlide();
+}
+
+function goToPreviousSlide() {
+    currentIndex --;
+    if (currentIndex < 0) {
+        currentIndex = slides.children.length - 1;
+    }
+
+    showSlide();
+}
+
 function nextSlide() {
     const next = document.querySelector(".next");
-
-    next.addEventListener("click", () => {
-        currentIndex++;
-        if (currentIndex >= slides.children.length){
-            currentIndex = 0;
-        }
-        showSlide();
-    })
+    next.addEventListener("click", goToNextSlide);
 }
 
 function previousSlide() {
-    const previous = document.querySelector(".prev");
-
-    previous.addEventListener("click", () => {
-        currentIndex--;
-        if (currentIndex < 0){
-            currentIndex = slides.children.length - 1;
-        }
-        showSlide();
-    })
+    const prev = document.querySelector(".prev");
+    prev.addEventListener("click", goToPreviousSlide);
 }
 
 function showSlide() {
     slides.style.transform = `translateX(-${currentIndex * 100}%)`;
     updateDots();
 }
+
+//autoscroll
+setInterval(goToNextSlide, 5000);
 
 //dots
 
